@@ -1,8 +1,68 @@
 import random
-word_list = ["aardvark", "baboon", "camel"]
+stages = [r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
 
+word_list = ["ronaldo", "messi", "kaka", "neymar", "pele", "maradona", "zidane", "maldini", "buffon", "xavi", "iniesta"]
+
+
+lives = 6
+print("Welcome to Sport Hangman!")
 chosen_word = random.choice(word_list)
-print(chosen_word)
+
 
 placeholder = ""
 word_length = len(chosen_word)
@@ -29,6 +89,19 @@ while not game_over:
             display += "_"
     print(display)
 
+    if guess not in chosen_word:
+        lives -= 1
+        print(f"You guessed {guess}, that's not in the word. You lose a life.")
+        if lives == 0:
+            game_over = True
+            print("You lose!")
+            break
+
     if "_" not in display:
         game_over = True
         print("You win!")
+
+
+    print(stages[lives])
+    print(f"You have {lives} lives left.")
+print(f"The chosen word was {chosen_word}.")
