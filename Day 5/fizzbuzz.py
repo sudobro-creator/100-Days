@@ -5,6 +5,7 @@ print("If the number is divisible by 5, it will print" "Buzz")
 print("If the number is divisible by both 3 and 5, it will print" "FizzBuzz")
 print("If the number is not divisible by either, it will print the number itself.")
 
+
 for number in range(1,101):
     if number % 3 == 0 :
         print("Fizz")
