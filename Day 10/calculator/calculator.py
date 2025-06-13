@@ -21,7 +21,7 @@ def divide(n1, n2):
 
 division = divide
 
-first_num = int(input("What is the first number: "))
+first_num = float(input("What is the first number: "))
 signs = {
     "+": add,
     "-": subtract,
@@ -34,7 +34,7 @@ while restart:
     for symbol in signs:
         print(symbol)
     math_sign = input("Pick an operator: ")
-    next_num = int(input("What is the next number: "))
+    next_num = float(input("What is the next number: "))
     if math_sign == "+":
         result = adding(n1=first_num, n2=next_num)
         print(result)
