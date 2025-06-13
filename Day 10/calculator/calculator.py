@@ -5,8 +5,6 @@ def add(n1, n2):
     return n1 + n2
 
 adding = add
-# print(adding(4, 3))
-
 
 def subtract(n1, n2):
     return n1 - n2
@@ -24,14 +22,19 @@ def divide(n1, n2):
 division = divide
 
 first_num = int(input("What is the first number: "))
-signs = {"+", "-", "*", "/"}
-
-print(signs)
-math_sign = input("Pick an operator: ")
-next_num = int(input("What is the next number: "))
+signs = {
+    "+": add,
+    "-": subtract,
+    "*": multiply,
+    "/": divide,
+}
 
 restart = True
 while restart:
+    for symbol in signs:
+        print(symbol)
+    math_sign = input("Pick an operator: ")
+    next_num = int(input("What is the next number: "))
     if math_sign == "+":
         result = adding(n1=first_num, n2=next_num)
         print(result)
@@ -53,10 +56,3 @@ while restart:
         restart = False
     elif stop == "y":
         first_num = result
-        signs = {"+", "-", "*", "/"}
-
-        print(signs)
-        math_sign = input("Pick an operator: ")
-        next_num = int(input("What is the next number: "))
-        new_calculation = first_num, math_sign, next_num
-        result = new_calculation
