@@ -1,6 +1,3 @@
-from ctypes import HRESULT
-from difflib import restore
-
 from art import logo
 print(logo)
 
@@ -48,8 +45,18 @@ while restart:
         result = division(first_num, next_num)
         print(result)
 
-    stop = input(f"Type 'y' to continue calculating with {result}, or type 'n' to start a new calculation or 'x' to stop calculation").lower()
+    stop = input(f"Type 'y' to continue calculating with {result}, or type 'n' to start a new calculation or 'x' to stop calculation: ").lower()
     if stop == "n":
         print("\n" * 100)
+        print(logo)
     elif stop == "x":
         restart = False
+    elif stop == "y":
+        first_num = result
+        signs = {"+", "-", "*", "/"}
+
+        print(signs)
+        math_sign = input("Pick an operator: ")
+        next_num = int(input("What is the next number: "))
+        new_calculation = first_num, math_sign, next_num
+        result = new_calculation
