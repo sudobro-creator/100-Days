@@ -57,14 +57,11 @@ while True:
             else:
                 print("Score must be between 0 and 100.")
         else:
-            print("Invalid input. Please enter a number.")
-    
+            print("Invalid input. Please enter a number.") 
     elif choice == "2":
         display_students()
-    
     elif choice == "3":
         print("Exiting program. Goodbye!")
         break
-    
     else:
         print("Invalid choice. Please select 1, 2, or 3.")
